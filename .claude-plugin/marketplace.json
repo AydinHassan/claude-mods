@@ -1,0 +1,11 @@
+{
+  "name": "aydin-mods",
+  "owner": { "name": "Aydin Hassan" },
+  "plugins": [
+    {
+      "name": "pr-links",
+      "source": "./plugins/pr-links",
+      "description": "Turns #123 in Claude's replies into a clickable link to that PR on GitHub."
+    }
+  ]
+}

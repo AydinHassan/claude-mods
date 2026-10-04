@@ -1,0 +1,6 @@
+{
+  "name": "pr-links",
+  "version": "0.1.0",
+  "description": "Turns #123 in Claude's replies into a clickable link to that PR on GitHub.",
+  "author": { "name": "Aydin Hassan" }
+}
