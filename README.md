@@ -15,7 +15,13 @@ claude plugin install pr-links@aydin-mods
 
 Turns `#123` in Claude's replies into a clickable link to that pull request on GitHub.
 
-The repository is read from `git remote get-url origin` in the session's working directory. Links point at `/pull/123`, which GitHub redirects to the issue when the number belongs to an issue.
+Each bare `#123` is linked to the repo the conversation was about when the reply was written, taken from the transcript up to that reply:
+
+1. a PR or issue URL with that same number (e.g. the output of `gh pr create`);
+2. otherwise the newest repo the transcript points at: `--repo`/`-R owner/repo`, GitHub MCP `owner`/`repo` arguments, a `github.com/owner/repo/pull|issues/N` URL, a `cd` or `git -C` directory in a Bash command, or the directory of a file read or edited (directories go through `git remote get-url origin`);
+3. otherwise the remote of the session's working directory.
+
+`owner/repo#123` is always linked to `owner/repo`. Links point at `/pull/123`, which GitHub redirects to the issue when the number belongs to an issue.
 
 Limits:
 
